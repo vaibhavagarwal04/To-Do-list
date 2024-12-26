@@ -29,6 +29,13 @@ public:
     }
 };
 
+// Comparator for priority queue to sort by due date
+struct CompareTasks {
+    bool operator()(const Task& a, const Task& b) const {
+        return a.dueDate > b.dueDate; // Min-heap based on dueDate
+    }
+};
+
 int main() {
     vector<Task> tasks;
     int choice;
